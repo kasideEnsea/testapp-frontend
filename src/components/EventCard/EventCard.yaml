@@ -1,0 +1,50 @@
+ru:
+  registered: зарегистрировался на портале
+  checklist:
+    created: создал новый чек-лист
+    modified-from: изменил описание чек-листа
+    modified-to: на
+    modified-deadline-of: изменил срок завершения чек-листа
+    modified-deadline-to: на
+    deleted: удалил чек-лист
+    done-1: пометил чек-лист
+    done-2: как выполненный
+    undone-1: продолжил выполнение чек-листа
+    undone-2:
+  task:
+    created: создал новую задачу
+    modified-from: изменил описание задачи
+    modified-to: на
+    modified-deadline-of: изменил срок выполнения задачи
+    modified-deadline-to: на
+    deleted: удалил задачу
+    done-1: пометил задачу
+    done-2: как выполненную
+    undone-1: продолжил выполнение задачи
+    undone-2: ' '
+  delete: Удалить
+en:
+  registered: has registered on the portal
+  checklist:
+    created: has created new checklist
+    modified-from: has changed description of task
+    modified-to: to
+    modified-deadline-of: has changed deadline of checklist
+    modified-deadline-to: to
+    deleted: has deleted checklist
+    done-1: has marked checklist
+    done-2: as completed
+    undone-1: masked checklist
+    undone-2: as not completed
+  task:
+    created: has created new task
+    modified-from: has changed description of task
+    modified-to: to
+    modified-deadline-of: has changed deadline of task
+    modified-deadline-to: to
+    deleted: has deleted task
+    done-1: has marked task
+    done-2: as completed
+    undone-1: masked task
+    undone-2: as not completed
+  delete: Delete

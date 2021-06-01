@@ -1,0 +1,24 @@
+ru:
+  no-deadline: Без срока
+  checklist-description: Описание чек-листа
+  task-description: Описание задачи
+  save: Сохранить
+  deadline: Крайний срок
+  edit-task: Изменить
+  delete-task: Удалить
+  add-subTask: Добавить подзадачу
+  done: Выполнено
+  not-done: Не выполнено
+  comment-prompt: "Вы можете оставить комментарий к вашему дейтвию:"
+en:
+  no-deadline: No deadline
+  checklist-description: Checklist description
+  task-description: Task description
+  save: Save
+  deadline: Deadline
+  edit-task: Edit
+  delete-task: Delete
+  add-subTask: Add subtask
+  done: Done
+  not-done: Not done
+  comment-prompt: "You can leave a comment to your action:"

@@ -1,0 +1,8 @@
+ru:
+  title: "Успехи пользователя за последние 7 дней:"
+  loading: Загрузка...
+  error: Произошла непредвиденная ошибка
+en:
+  title: "User's achievements for last 7 days:"
+  loading: Loading...
+  error: An error occured

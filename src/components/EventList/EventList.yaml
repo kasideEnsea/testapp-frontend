@@ -1,0 +1,12 @@
+ru:
+  nothing_found: Ничего не найдено
+  loading: Загрузка...
+  error: Произошла непредвиденная ошибка
+  update_and_show_more: Обновить и показать ещё
+  show_more: Показать ещё
+en:
+  nothing_found: Nothing found
+  loading: Loading...
+  error: An unexpected error occured
+  update_and_show_more: Update and show more
+  show_more: Show more
