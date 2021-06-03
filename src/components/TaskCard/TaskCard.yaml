@@ -9,6 +9,8 @@ ru:
   add-subTask: Добавить подзадачу
   done: Выполнено
   not-done: Не выполнено
+  imp: Важное дело
+  usual: Обычное дело
   comment-prompt: "Вы можете оставить комментарий к вашему дейтвию:"
 en:
   no-deadline: No deadline
@@ -21,4 +23,6 @@ en:
   add-subTask: Add subtask
   done: Done
   not-done: Not done
+  imp: Important
+  usual: Usial
   comment-prompt: "You can leave a comment to your action:"

@@ -13,10 +13,10 @@
                 </tr>
                 <tr>
                     <td :key="i"
-                        :style="`background-color:rgba(0, 0, 255, ${count && max ? count / max : 0})!important`"
+                        :style="`background-color:rgba(0, 0, 255, ${arr[1] && max ? arr[1] / max : 0})!important`"
                         class="info"
-                        v-for="(count, i) in Object.values(summary)">
-                        {{count}}
+                        v-for="(arr, i) in Object.values(summary)">
+                        {{arr[0]}}
                     </td>
                 </tr>
             </table>
@@ -38,7 +38,7 @@
     export default class SummaryCard extends Vue {
         daysNumber = 7;
         @Prop() userId!: number;
-        summary: Record<string, number> = {};
+        summary: Record<string, Array<number>> = {};
         State = State;
         state: State = State.None;
         max = 0;
@@ -52,13 +52,13 @@
             const date = new Date()
             date.setDate(date.getDate() - this.daysNumber + 1);
             for (let i = 0; i < this.daysNumber; i++, date.setDate(date.getDate() + 1)) {
-                this.summary[this.formatDate(date)] = 0;
+                this.summary[this.formatDate(date)] = [0, 0];
             }
 
             this.state = State.Loading;
             UserSummaryService.getUserSummary(this.userId).then(value => {
-                this.max = Math.max(...value.data.map(v1 => v1.count));
-                value.data.forEach(value1 => this.summary[this.formatDate(value1.date)] = value1.count);
+                this.max = Math.max(...value.data.map(v1 => v1.rate));
+                value.data.forEach(value1 => this.summary[this.formatDate(value1.date)] = [value1.count, value1.rate]);
                 this.state = State.Success;
             }).catch(reason => {
                 console.error(reason);

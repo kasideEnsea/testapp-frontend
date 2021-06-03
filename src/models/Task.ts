@@ -8,4 +8,5 @@ export interface Task {
     deleted?: boolean;
     tasks?: Task[];
     comment?: string;
+    rate?: number;
 }

@@ -14,6 +14,9 @@
                 </v-row>
                 <datetime :clock="true"
                           :defaultMessage="$t('no-deadline')" :time-str="task.deadline"/>
+              <div>
+                {{ $t(isImportant ? "imp" : "usual")}}
+              </div>
             </template>
             <template v-else>
                 <v-container>
@@ -26,6 +29,12 @@
                         <v-row>
                             <date-editor :label="$t('deadline')" v-model="task2edit.deadline"/>
                         </v-row>
+                        <select v-model="rate">
+                          <option>Неважная задача</option>
+                          <option>Важная задача</option>
+                        </select>
+<!--                        <model-select :options="rateOptions" v-model="rate" placeholder="select rate">-->
+<!--                        </model-select>-->
                     </v-col>
                 </v-container>
                 <datetime :clock="true" :time-str="task.deadline.toString()" v-if="task.deadline"/>
@@ -56,12 +65,17 @@
     @Component({
         components: {DateEditor, Datetime, LanguageSelector}
     })
+
     export default class TaskCard extends Vue {
         @Prop() task!: Task;
         @Prop() isEditing: boolean | undefined;
+        isImportant = this.task.rate == 3;
         editMode = !!this.isEditing || !this.task.id;
         key = 0;
         smallKey = 0;
+        rateOptions = ["Важное задание", "Неважное задание"];
+        rate = this.isImportant? "Важное задание":"Неважное задание";
+
 
         task2edit: Task = Object.assign({}, this.task);
 
@@ -73,6 +87,7 @@
             if (!this.updateTask)
                 return;
             this.updateTask(this.task2edit).then(value => {
+
                 this.task = Object.assign(this.task, value);
                 this.task2edit = Object.assign({}, this.task);
                 this.editMode = false;
@@ -105,7 +120,17 @@
             this.save();
         }
 
+
         private updateTask(task: Task) {
+            if (this.rate=="Важное задание"){
+
+                task.rate = 3;
+                this.isImportant = true;
+            }
+            else{
+                task.rate = 2;
+              this.isImportant = false;
+            }
             task.comment = prompt(this.$t('comment-prompt').toString()) || undefined;
             if (task.id) {
                 return TasksService.updateTask(task);
@@ -128,6 +153,17 @@
 
             const last = filtered.pop();
             return !last || !!last.id;
+        }
+
+        private changeRate(){
+          if (this.isImportant){
+            this.task.rate = 0;
+            this.isImportant = false;
+          }
+          else{
+            this.task.rate = 2;
+            this.isImportant = true;
+          }
         }
     }
 
