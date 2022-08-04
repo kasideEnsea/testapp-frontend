@@ -37,10 +37,5 @@ export const authModule = {
                 return null
             return state.auth.user;
         },
-        getAuthorities(state: AuthModuleState): string[] | null {
-            if (!state.auth)
-                return null
-            return state.auth.authorities;
-        }
     }
 };

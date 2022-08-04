@@ -1,22 +1,8 @@
 ru:
-  title: ЧекЛист!
-  feed: Лента
-  tasks: Задачи
-  profile: Профиль
+  title: TestApp
+  tests: Мои тесты
   login: Войти
   registration: Регистрация
   menu:
-    edit-profile: Редактирование профиля
     logout: Выход
   default_name: Неизвестно
-en:
-  title: CheckList!
-  feed: Feed
-  tasks: Tasks
-  profile: Profile
-  login: Log in
-  registration: Sign up
-  menu:
-    edit-profile: Edit profile
-    logout: Log out
-  default_name: Unknown

@@ -12,19 +12,17 @@
                 >
                     <v-text-field
                             @keydown.enter="register"
-                            autofocus
-                            :label="$t('form.label.name')"
+                            :label="$t('form.label.email')"
                             required
-                            type="name"
-                            v-model="options.name"
-                            :rules="[v => !!v || $t('form.error.name_required')]"
+                            v-model="options.email"
+                            :rules="[v => !!v || $t('form.error.login_required')]"
                     ></v-text-field>
                     <v-text-field
                             @keydown.enter="register"
-                            :label="$t('form.label.login')"
+                            :label="$t('form.label.name')"
                             required
-                            v-model="options.login"
-                            :rules="[v => !!v || $t('form.error.login_required')]"
+                            v-model="options.name"
+                            :rules="[v => !!v || $t('form.error.name_required')]"
                     ></v-text-field>
                     <v-text-field
                             @keydown.enter="register"
@@ -83,8 +81,8 @@
         private errorDict!: Record<number, string>;
         private valid = false;
         private options = new class implements RegistrationOptions {
+            email = "";
             name = "";
-            login = "";
             password = "";
         };
 
@@ -94,6 +92,10 @@
                 return error;
             else
                 return this.$t('error.default', {errCode: this.errCode}).toString();
+        }
+
+        get titleString(): string {
+            return 'LinGo';
         }
 
         get isLoading(): boolean {
@@ -130,7 +132,7 @@
             this.state = State.Loading;
             RegistrationService.register(this.options).then(() => {
                 this.state = State.Success;
-                this.$router.push("/");
+                this.$router.push("/novalid");
             }).catch(reason => {
                 console.error("Reason: " + reason);
                 this.errCode = reason.response.status;

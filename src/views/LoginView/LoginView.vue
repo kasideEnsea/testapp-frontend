@@ -3,7 +3,7 @@
     <div class="mx-auto" style="max-width: 1000px;">
         <h1>{{$t('title')}}</h1>
         <v-card class="card my-4" style="max-width: 440px;">
-            <v-card-text>
+            <v-card-text class="reg">
                 <v-form
                         class="mx-auto"
                         ref="form"
@@ -13,11 +13,11 @@
                     <v-text-field
                             @keydown.enter="authorize"
                             autofocus
-                            :label="$t('form.label.login')"
+                            :label="$t('form.label.email')"
                             required
-                            v-model="options.login"
+                            v-model="options.email"
                             :rules="[v => !!v || $t('form.error.login_required')]"
-                    ></v-text-field>
+                    />
                     <v-text-field
                             @keydown.enter="authorize"
                             :label="$t('form.label.password')"
@@ -25,7 +25,7 @@
                             type="password"
                             v-model="options.password"
                             :rules="[v => !!v || $t('form.error.password_required')]"
-                    ></v-text-field>
+                    />
                     <v-btn :disabled="submitDisabled"
                            :loading="isLoading"
                            @click="authorize"
@@ -65,7 +65,7 @@
         private errorDict!: Record<number, string>
         private valid = false;
         private options = new class implements LoginOptions {
-            login = "";
+            email = "";
             password = "";
         };
 
@@ -87,6 +87,10 @@
 
         get isError(): boolean {
             return this.state == State.Error;
+        }
+
+        get titleString(): string {
+            return 'LinGo';
         }
 
         created() {
@@ -123,5 +127,8 @@
 </script>
 
 <style scoped>
-
+    .reg {
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>

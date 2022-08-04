@@ -4,17 +4,17 @@ import Vuetify from 'vuetify/lib';
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    /*theme: {
+    theme: {
         themes: {
             light: {
-                primary: '#E20074',
-                secondary: '#262626',
-                accent: '#00739F',
-                error: '#D90000',
-                info: '#009DE0',
-                success: '#46A800',
+                primary: '#1456d8',
+                secondary: '#B2EBF2',
+                accent: '#153661',
+                error: '#c6504a',
+                info: '#B2EBF2',
+                success: '#9ccc65',
                 warning: '#FECB00'
             }
         }
-    }*/
+    }
 });

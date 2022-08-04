@@ -26,26 +26,6 @@
     @import "~typeface-roboto-multilang/cyrillic-ext.css";
     @import "~toastr/toastr.scss";
 
-    /*.toast {
-        background-color: #262626;
-    }
-
-    .toast-success {
-        background-color: #46A800;
-    }
-
-    .toast-error {
-        background-color: #D90000;
-    }
-
-    .toast-info {
-        background-color: #009DE0;
-    }
-
-    .toast-warning {
-        background-color: #FECB00;
-    }*/
-
     .toast-with-offset {
         top: 100px;
         right: 12px;

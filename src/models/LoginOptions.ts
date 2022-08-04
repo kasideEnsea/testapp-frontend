@@ -1,4 +1,4 @@
 export interface LoginOptions {
-    login: string;
+    email: string;
     password: string;
 }

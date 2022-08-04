@@ -1,10 +1,10 @@
-<i18n src="./PageNotFoundView.yaml"/>
+<i18n src="./NoValidView.yaml"/>
 <template>
     <v-container>
         <v-row class="text-center">
             <v-col class="mb-4">
                 <h1 class="display-2 font-weight-bold mb-3">
-                    {{$t('title')}}
+                    404
                 </h1>
 
                 <p class="subheading font-weight-regular">
@@ -22,7 +22,7 @@
     import {TitleService} from "@/services/TitleService";
 
     @Component
-    export default class PageNotFoundView extends Vue {
+    export default class NoValidView extends Vue {
         created() {
             this.setTitle();
         }
